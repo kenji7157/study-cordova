@@ -19,7 +19,8 @@
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
-      "cordova-plugin-console": {}
+      "cordova-plugin-console": {},
+      "cordova-plugin-dialogs": {}
     },
     "platforms": [
       "android",
@@ -30,6 +31,7 @@
     "cordova-android": "^6.3.0",
     "cordova-ios": "^6.1.1",
     "cordova-plugin-console": "^1.1.0",
-    "cordova-plugin-device": "^2.0.3"
+    "cordova-plugin-device": "^2.0.3",
+    "cordova-plugin-dialogs": "^2.0.2"
   }
 }

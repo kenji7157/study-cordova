@@ -26,4 +26,20 @@
         });
     }
 
+    // override window.alert() Module 5: Using Native Notification 
+    document.addEventListener('deviceready', function () {        
+        // コルドバプラグインが追加されて,navigator.notificationが参照できる場合
+        //  -> コルドバでビルドされている場合はwindow.alertをオーバーライドする 
+        if (navigator.notification) { // Override default HTML alert with native dialog
+            window.alert = function (message) {
+                navigator.notification.alert(
+                    message,    // message
+                    null,       // callback
+                    "WorkshopTEST", // title
+                    'OK'        // buttonName
+                );
+            };
+        }
+      }, false);
+
 }());
