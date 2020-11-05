@@ -28,6 +28,8 @@
 
     // override window.alert() Module 5: Using Native Notification 
     document.addEventListener('deviceready', function () {        
+        // register FastClick  Module 6: Avoiding the 300ms Click Delay
+        FastClick.attach(document.body);
         // コルドバプラグインが追加されて,navigator.notificationが参照できる場合
         //  -> コルドバでビルドされている場合はwindow.alertをオーバーライドする 
         if (navigator.notification) { // Override default HTML alert with native dialog
@@ -41,5 +43,4 @@
             };
         }
       }, false);
-
 }());
