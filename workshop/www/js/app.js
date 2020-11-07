@@ -5,10 +5,13 @@
     var service = new EmployeeService();
     service.initialize().done(function () {
         console.log("Service initialized");
+        // call renderHomeView() ::Module 7: Setting Up a Single-Page Application
+        renderHomeView();
     });
 
     /* --------------------------------- Event Registration -------------------------------- */
-    $('.search-key').on('keyup', findByName);
+    // delete keyup event ::Module 7: Setting Up a Single-Page Application
+    // $('.search-key').on('keyup', findByName);
     $('.help-btn').on('click', function() {
         alert("Employee Directory v3.4");
     });
@@ -24,6 +27,16 @@
                 $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
             }
         });
+    }
+
+    // define renderHomeView() ::Module 7: Setting Up a Single-Page Application
+    function renderHomeView() {
+        var html =
+          "<h1>Directory</h1>" +
+          "<input class='search-key' type='search' placeholder='Enter name'/>" +
+          "<ul class='employee-list'></ul>";
+        $('body').html(html);
+        $('.search-key').on('keyup', findByName);
     }
 
     // override window.alert() Module 5: Using Native Notification 
